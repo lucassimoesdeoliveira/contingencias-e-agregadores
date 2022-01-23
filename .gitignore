@@ -7,7 +7,7 @@
 *.sav
 pwfs/*.pwf
 savs/*.sav
-
+*.7z
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -20,8 +20,9 @@ __pycache__/
 # Distribution / packaging
 .Python
 build/
+build_console/
 develop-eggs/
-dist/
+dist_console/
 downloads/
 eggs/
 .eggs/
