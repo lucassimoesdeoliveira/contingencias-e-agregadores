@@ -430,7 +430,7 @@ class Ui_Janela(object):
 
     def retranslateUi(self, Janela):
         _translate = QtCore.QCoreApplication.translate
-        Janela.setWindowTitle(_translate("Janela", "Agregadores e Diagnóstico - v1.1.0 (jan-2022)"))
+        Janela.setWindowTitle(_translate("Janela", "Agregadores e Diagnóstico - v1.2.1 (jan-2022)"))
         self.tabWidget.setWhatsThis(_translate("Janela", "<html><head/><body><p><br/></p></body></html>"))
         self.groupBox_arqvs_carregados_agreg.setTitle(_translate("Janela", "Arquivos carregados"))
         self.listView_arqv_carregados_agreg.setWhatsThis(_translate("Janela", "<html><head/><body><p>Lista de casos carregados (.pwf/.sav) com base nos quais serão gerados os dados de agregadores.</p></body></html>"))

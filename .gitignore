@@ -8,6 +8,7 @@
 pwfs/*.pwf
 savs/*.sav
 *.7z
+*.exe
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

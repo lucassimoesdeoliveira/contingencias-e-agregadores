@@ -15,7 +15,7 @@
    <bool>true</bool>
   </property>
   <property name="windowTitle">
-   <string>Agregadores e Diagnóstico - v1.1.0 (jan-2022)</string>
+   <string>Agregadores e Diagnóstico - v1.2.1 (jan-2022)</string>
   </property>
   <property name="windowIcon">
    <iconset resource="recursos.qrc">
