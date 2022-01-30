@@ -8,7 +8,7 @@ PyInstaller.__main__.run([
     '--workpath',
     './build',
     '--name',
-    'Agregadores - v1.0.1 (jan-2022)',
+    'Agregadores - v1.2.1 (jan-2022)',
     '--icon',
     r'..\ui\resources\logo-epe.ico',
     '--windowed'

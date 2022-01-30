@@ -409,17 +409,13 @@ def gen_agregadores(dbar, dlin, regioes=True, geracao=True, gera_dlin=True):
     dict_geracao_cod = dict(tradutor_tipo_geracao[['Sigla', 'Cod']].to_dict('split')['data'])
     dict_classificacao_barra = dict(tradutor_classificacao_barra[['Sigla', 'Cod']].to_dict('split')['data'])
 
-    dbar.replace(to_replace={'A1': dict_uf_cod,
+    dbar = dbar.replace(to_replace={'A1': dict_uf_cod,
                              'A3': dict_uf_regiao,
                              'A4': dict_geracao_cod,
-                             'A5': dict_classificacao_barra},
-                 value=None,
-                 inplace=True)
+                             'A5': dict_classificacao_barra})
 
-    dlin.replace(to_replace={'A1': dict_uf_cod,
-                             'A2': dict_uf_cod},
-                 value=None,
-                 inplace=True)
+    dlin = dlin.replace(to_replace={'A1': dict_uf_cod,
+                             'A2': dict_uf_cod})
 
     return dbar, dlin
     
@@ -650,34 +646,34 @@ def gera_pwf_salvar_agregadores(SAVS, ANOS):
 
 
 
-if __name__ == '__main__':   
-    ## Entradas
-    # diretorio do script
-    SCRIPT_DIR = os.path.dirname(__file__)
-    os.chdir(SCRIPT_DIR)
+# if __name__ == '__main__':
+#     ## Entradas
+#     # diretorio do script
+#     SCRIPT_DIR = os.path.dirname(__file__)
+#     os.chdir(SCRIPT_DIR)
     
-    ANAREDE_PATH = r"C:\Cepel\Anarede\V110400\ANAREDE.exe"
+#     ANAREDE_PATH = r"C:\Cepel\Anarede\V110400\ANAREDE.exe"
     
-    ANOS = range(24, 34)
+#     ANOS = range(24, 34)
     
-    SAVS = {
-        # 'LNS.SAV':  'LNS',
-        # 'LNU.SAV':  'LNU',
-        # 'MNS.SAV':  'MNS',
-        # 'MNU.SAV':  'MNU',
-        # 'PNS.SAV':  'PNS',
-        # 'PNU.SAV':  'PNU',
-        'PES-PD 2029-NORTE UMIDO final.sav': 'PNU',
-    }
+#     SAVS = {
+#         # 'LNS.SAV':  'LNS',
+#         # 'LNU.SAV':  'LNU',
+#         # 'MNS.SAV':  'MNS',
+#         # 'MNU.SAV':  'MNU',
+#         # 'PNS.SAV':  'PNS',
+#         # 'PNU.SAV':  'PNU',
+#         'PES-PD 2029-NORTE UMIDO final.sav': 'PNU',
+#     }
     
-    gera_pwf_dados_agregadores()
+#     gera_pwf_dados_agregadores()
     
-    subprocess.run([gera_pwf_exporta_casos(SAVS, ANOS), ANAREDE_PATH])
+#     subprocess.run([gera_pwf_exporta_casos(SAVS, ANOS), ANAREDE_PATH])
 
-    FILES =  [f for f in os.listdir(r'./pwfs') if f[-4:] == '.PWF']
+#     FILES =  [f for f in os.listdir(r'./pwfs') if f[-4:] == '.PWF']
     
-    gera_pwf_agregadores(FILES)
+#     gera_pwf_agregadores(FILES)
        
-    subprocess.run([gera_pwf_salvar_agregadores(SAVS, ANOS), ANAREDE_PATH])
+#     subprocess.run([gera_pwf_salvar_agregadores(SAVS, ANOS), ANAREDE_PATH])
     
-    subprocess.run([gera_pwf_exporta_casos(SAVS, ANOS), ANAREDE_PATH])
+#     subprocess.run([gera_pwf_exporta_casos(SAVS, ANOS), ANAREDE_PATH])
