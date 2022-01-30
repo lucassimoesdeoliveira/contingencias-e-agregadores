@@ -11,9 +11,9 @@ TODO:
     disabilitar mainwindow durante execução
     
     # tab_agreg
-    ok -carregar pwfs se anarede não estiver checado
-    ok -criar estrutura de pastas se não houver (só agreg)
-    ok usar o resource system para os icones
+    ok - carregar pwfs se anarede não estiver checado
+    ok - criar estrutura de pastas se não houver (só agreg)
+    ok - usar o resource system para os icones
     
 """
 import os
@@ -24,8 +24,8 @@ import subprocess
 import epecontingencias as epe
 import epeagregadores as epe_agreg
 from PyQt5 import QtCore, QtGui, QtWidgets
-from ui.Dialog import Ui_Janela
-from ui.DialogIgnora import Ui_Janelinha
+from ui.main_window import Ui_Janela
+from ui.ignora_barras_window import Ui_Janelinha
 
 # Ajusta GUI para telas de alta resolução     
 if hasattr(QtCore.Qt, 'AA_EnableHighDpiScaling'):

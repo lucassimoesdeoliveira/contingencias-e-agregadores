@@ -1,4 +1,4 @@
-<RCC>	
+<RCC>
   <qresource prefix="icones">
     <file alias="pwf">./resources/EditCepel.ico</file>
     <file alias="icon">./resources/logo-epe.ico</file>
@@ -9,7 +9,7 @@
     <file alias="doc">./resources/023.png</file>
   </qresource>
   <qresource prefix="ui">
-    <file>dialog_ignora.ui</file>
-    <file>dialog.ui</file>
+    <file>ignora_barras_window.ui</file>
+    <file>main_window.ui</file>
   </qresource>
 </RCC>
