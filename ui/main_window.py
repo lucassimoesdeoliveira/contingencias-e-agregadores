@@ -15,6 +15,7 @@ class Ui_Janela(object):
     def setupUi(self, Janela):
         Janela.setObjectName("Janela")
         Janela.resize(759, 423)
+        Janela.setAcceptDrops(True)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/icones/epe"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         Janela.setWindowIcon(icon)
@@ -23,15 +24,19 @@ class Ui_Janela(object):
         font = QtGui.QFont()
         font.setPointSize(8)
         self.tabWidget.setFont(font)
+        self.tabWidget.setAcceptDrops(True)
         self.tabWidget.setObjectName("tabWidget")
         self.tab_agreg = QtWidgets.QWidget()
+        self.tab_agreg.setAcceptDrops(True)
         self.tab_agreg.setObjectName("tab_agreg")
         self.groupBox_arqvs_carregados_agreg = QtWidgets.QGroupBox(self.tab_agreg)
         self.groupBox_arqvs_carregados_agreg.setGeometry(QtCore.QRect(2, 6, 281, 378))
+        self.groupBox_arqvs_carregados_agreg.setAcceptDrops(True)
         self.groupBox_arqvs_carregados_agreg.setObjectName("groupBox_arqvs_carregados_agreg")
         self.listView_arqv_carregados_agreg = QtWidgets.QListView(self.groupBox_arqvs_carregados_agreg)
         self.listView_arqv_carregados_agreg.setGeometry(QtCore.QRect(10, 20, 261, 311))
         self.listView_arqv_carregados_agreg.viewport().setProperty("cursor", QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.listView_arqv_carregados_agreg.setAcceptDrops(True)
         self.listView_arqv_carregados_agreg.setSelectionMode(QtWidgets.QAbstractItemView.ExtendedSelection)
         self.listView_arqv_carregados_agreg.setObjectName("listView_arqv_carregados_agreg")
         self.pushButton_carrega_arqvs_agreg = QtWidgets.QPushButton(self.groupBox_arqvs_carregados_agreg)
@@ -425,7 +430,7 @@ class Ui_Janela(object):
 
     def retranslateUi(self, Janela):
         _translate = QtCore.QCoreApplication.translate
-        Janela.setWindowTitle(_translate("Janela", "Agregadores e Diagnóstico - v1.0.1 (jan-2022)"))
+        Janela.setWindowTitle(_translate("Janela", "Agregadores e Diagnóstico - v1.1.0 (jan-2022)"))
         self.tabWidget.setWhatsThis(_translate("Janela", "<html><head/><body><p><br/></p></body></html>"))
         self.groupBox_arqvs_carregados_agreg.setTitle(_translate("Janela", "Arquivos carregados"))
         self.listView_arqv_carregados_agreg.setWhatsThis(_translate("Janela", "<html><head/><body><p>Lista de casos carregados (.pwf/.sav) com base nos quais serão gerados os dados de agregadores.</p></body></html>"))
@@ -512,13 +517,3 @@ class Ui_Janela(object):
         self.pushButton_remover.setText(_translate("Janela", "Remover"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_diag), _translate("Janela", "Diagnóstico"))
 from ui import recursos
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    Janela = QtWidgets.QDialog()
-    ui = Ui_Janela()
-    ui.setupUi(Janela)
-    Janela.show()
-    sys.exit(app.exec_())

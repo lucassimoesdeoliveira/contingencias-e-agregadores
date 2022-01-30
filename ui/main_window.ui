@@ -11,8 +11,11 @@
     <height>423</height>
    </rect>
   </property>
+  <property name="acceptDrops">
+   <bool>true</bool>
+  </property>
   <property name="windowTitle">
-   <string>Agregadores e Diagnóstico - v1.0.1 (jan-2022)</string>
+   <string>Agregadores e Diagnóstico - v1.1.0 (jan-2022)</string>
   </property>
   <property name="windowIcon">
    <iconset resource="recursos.qrc">
@@ -32,6 +35,9 @@
      <pointsize>8</pointsize>
     </font>
    </property>
+   <property name="acceptDrops">
+    <bool>true</bool>
+   </property>
    <property name="whatsThis">
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
@@ -39,6 +45,9 @@
     <number>0</number>
    </property>
    <widget class="QWidget" name="tab_agreg">
+    <property name="acceptDrops">
+     <bool>true</bool>
+    </property>
     <attribute name="title">
      <string>Agregadores</string>
     </attribute>
@@ -50,6 +59,9 @@
        <width>281</width>
        <height>378</height>
       </rect>
+     </property>
+     <property name="acceptDrops">
+      <bool>true</bool>
      </property>
      <property name="title">
       <string>Arquivos carregados</string>
@@ -65,6 +77,9 @@
       </property>
       <property name="cursor" stdset="0">
        <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="acceptDrops">
+       <bool>true</bool>
       </property>
       <property name="whatsThis">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Lista de casos carregados (.pwf/.sav) com base nos quais serão gerados os dados de agregadores.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>

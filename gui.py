@@ -286,18 +286,60 @@ class Dialog(QtWidgets.QDialog, Ui_Janela):
             # print('atualiza_filtros_vcontrol - off')
             # print(self.vcontings)
             # print(self.vmons)
-            
+    #=================== DRAG AND DROP AGREGADORES
+
+    def dragEnterEvent(self, event):
+        if event.mimeData().hasUrls:
+            event.accept()
+        else:
+            event.ignore()
+
+    def dragMoveEvent(self, event):
+        if event.mimeData().hasUrls():
+            event.setDropAction(QtCore.Qt.CopyAction)
+            event.accept()
+        else:
+            event.ignore()
+
+    def dropEvent(self, event):
+        if event.mimeData().hasUrls():
+            event.setDropAction(QtCore.Qt.CopyAction)
+            event.accept()
+
+            links = []
+            for url in event.mimeData().urls():
+                # https://doc.qt.io/qt-5/qurl.html
+                if url.isLocalFile():
+                    links.append(str(url.toLocalFile()))
+                else:
+                    links.append(str(url.toString()))
+            print(links)
+            self.addItems(links)
+        else:
+            event.ignore()
+
+    def addItems(self, links):
+        # print(self.files)
+        dropped_savs = [file for file in links if file[-4:].lower() == '.sav']
+
+        if dropped_savs:
+            self.seleciona_arqvs(dropped_savs)
+
     #=================== ABA AGREGADORES
-    def seleciona_arqvs(self):
+    def seleciona_arqvs(self, files=None):
         if self.anarede:
             dir_ = "./savs/"
             filtro = "Arquivo histórico (*.sav)"
         else:
             dir_ = "./pwfs/"
             filtro = "Casos de flow (*.pwf)"
-        self.files, __ = QtWidgets.QFileDialog.getOpenFileNames(self,
+
+        if not files:
+            self.files, __ = QtWidgets.QFileDialog.getOpenFileNames(self,
                     "Selecione os arquivos dos casos a serem analisados",
                     dir_, filtro)
+        else:
+            self.files = files
         # print(self.files)
         arqvs = [tuple(file.rsplit('/',1)) for file in self.files]  
         # print(arqvs)
