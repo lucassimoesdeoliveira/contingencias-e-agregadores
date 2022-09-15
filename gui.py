@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Sep 18 16:10:13 2020
-
-@author: samir
 
 TODO: 
     ok - arrumar tab_conting nome dos arqvs
@@ -116,7 +113,7 @@ class Dialog(QtWidgets.QDialog, Ui_Janela):
         
         # flag de execução automática do Anarede
         self.anarede = True
-        self.ana_path = r'C:\Cepel\Anarede\V110505\ANAREDE.exe'
+        self.ana_path = r'C:\Cepel\Anarede\V110602\ANAREDE.exe'
         # self.ano_inic = 2024
         # self.ano_final = 2033        
         self.posicoes = [25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36]
